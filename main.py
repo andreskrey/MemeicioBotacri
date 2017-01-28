@@ -51,7 +51,7 @@ reddit = praw.Reddit(user_agent='MemeicioBotacri',
                      username=username, password=password)
 
 # Get comments
-subreddit = reddit.subreddit('empleadoEstatalBot')
+subreddit = reddit.subreddit('argentina')
 comments = subreddit.comments()
 
 count = 0
@@ -71,7 +71,7 @@ for comment in comments:
             if not query.exists():
                 Memes(thing_id=comment.fullname, string=meme).save()
                 comment.reply(
-                    'Gracias, su colaboracion ha sido agregada a la lista de Memeicios Ⓡ \n## {} \n - - - - - \n Lista completa de Memeicios \n - - - - - \n ^(Soy un bot, *priip*) ^/ ^[Autor](/u/subtepass) ^/ [^Código ^fuente](https://github.com/andreskrey/MemeicioBotacri)'.format(
+                    'Gracias, su colaboracion ha sido agregada a la lista de Memeicios Ⓡ \n## {} \n - - - - - \n Lista completa de Memeicios ^Coming ^soon \n - - - - - \n ^(Soy un bot, *priip*) ^/ ^[Autor](/u/subtepass) ^/ [^Código ^fuente](https://github.com/andreskrey/MemeicioBotacri)'.format(
                         meme)
                 )
                 count += 1
