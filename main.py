@@ -12,8 +12,8 @@ if os.environ.get('CURRENT_ENV') == 'HEROKU':
     client_secret = os.environ.get('CLIENT_SECRET')
     username = os.environ.get('USERNAME')
     password = os.environ.get('PASSWORD')
-    mysql_username = os.environ.get['MYSQL_USERNAME']
-    mysql_password = os.environ.get['MYSQL_PASSWORD']
+    mysql_username = os.environ.get('MYSQL_USERNAME')
+    mysql_password = os.environ.get('MYSQL_PASSWORD')
 else:
     credentials = open('credentials.json')
     credentials = json.load(credentials)
