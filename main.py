@@ -12,6 +12,7 @@ if os.environ.get('CURRENT_ENV') == 'HEROKU':
     client_secret = os.environ.get('CLIENT_SECRET')
     username = os.environ.get('USERNAME')
     password = os.environ.get('PASSWORD')
+    mysql_host = os.environ.get('MYSQL_HOST')
     mysql_username = os.environ.get('MYSQL_USERNAME')
     mysql_password = os.environ.get('MYSQL_PASSWORD')
 else:
@@ -21,6 +22,7 @@ else:
     client_secret = credentials['CLIENT_SECRET']
     username = credentials['USERNAME']
     password = credentials['PASSWORD']
+    mysql_host = credentials['MYSQL_HOST']
     mysql_username = credentials['MYSQL_USERNAME']
     mysql_password = credentials['MYSQL_PASSWORD']
 
@@ -28,7 +30,7 @@ else:
 db = MySQLDatabase('memes',
                    user=mysql_username,
                    passwd=mysql_password,
-                   host='localhost')
+                   host=mysql_host)
 
 
 class Memes(Model):
