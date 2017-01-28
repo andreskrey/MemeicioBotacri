@@ -12,6 +12,7 @@ if os.environ.get('CURRENT_ENV') == 'HEROKU':
     client_secret = os.environ.get('CLIENT_SECRET')
     username = os.environ.get('USERNAME')
     password = os.environ.get('PASSWORD')
+    mysql_db = os.environ.get('MYSQL_DB')
     mysql_host = os.environ.get('MYSQL_HOST')
     mysql_username = os.environ.get('MYSQL_USERNAME')
     mysql_password = os.environ.get('MYSQL_PASSWORD')
@@ -22,12 +23,13 @@ else:
     client_secret = credentials['CLIENT_SECRET']
     username = credentials['USERNAME']
     password = credentials['PASSWORD']
+    mysql_db = credentials['MYSQL_DB']
     mysql_host = credentials['MYSQL_HOST']
     mysql_username = credentials['MYSQL_USERNAME']
     mysql_password = credentials['MYSQL_PASSWORD']
 
 # Connect database
-db = MySQLDatabase('memes',
+db = MySQLDatabase(mysql_db,
                    user=mysql_username,
                    passwd=mysql_password,
                    host=mysql_host)
