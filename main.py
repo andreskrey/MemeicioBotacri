@@ -69,7 +69,7 @@ for comment in comments:
             # Check if we already are dank enough
             query = Memes.select().where(Memes.string == meme)
             if not query.exists():
-                Memes(thing_id=comment.fullname, string=meme).save()
+                Memes(thing_id=comment.fullname, string=meme, link_id=comment.link_id).save()
                 comment.reply(
                     'Gracias, su colaboracion ha sido agregada a la lista de Memeicios Ⓡ \n## {} \n - - - - - \n Lista completa de Memeicios ^Coming ^soon \n - - - - - \n ^(Soy un bot, *priip*) ^/ ^[Autor](/u/subtepass) ^/ [^Código ^fuente](https://github.com/andreskrey/MemeicioBotacri)'.format(
                         meme)
