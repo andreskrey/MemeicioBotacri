@@ -38,6 +38,8 @@ db = MySQLDatabase(mysql_db,
 class Memes(Model):
     thing_id = CharField()
     string = CharField()
+    link_id = CharField()
+    thread_title = CharField()
 
     class Meta:
         database = db
